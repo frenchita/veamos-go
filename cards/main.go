@@ -4,26 +4,32 @@ import (
 	"fmt"
 )
 
-type card struct {
-	description string
-	status      string
-	tasks       []task
-}
-
-type task struct {
-	description string
-	//	deadline    time.Time
-	status string
-}
+type cards []card
 
 func main() {
-	project := card{
-		description: "first project",
-		status:      "in progress",
-		tasks: []task{
-			{"task 1", "in progress"},
-			{"task 2", "done"},
-		},
+
+	my_cards := cards{}
+
+	for {
+		action := StringPrompt("Ingrese el número de la acción que desea realizar\n1 - Listar Cards\n2 - Agregar Card\n3 - Modificar Card\n4 - Eliminar Card\n5 - Salir\n")
+		switch action {
+		case "1":
+			my_cards.show()
+		case "2":
+			my_cards = my_cards.add()
+		case "3":
+			fmt.Println("3")
+		case "4":
+			fmt.Println("4")
+		case "5":
+			fmt.Println("Saliendo ...")
+		default:
+			fmt.Printf("default")
+		}
+
+		if action == "5" {
+			break
+		}
 	}
-	fmt.Println(project)
+
 }
