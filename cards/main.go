@@ -18,9 +18,9 @@ func main() {
 		case "2":
 			my_cards = my_cards.add()
 		case "3":
-			fmt.Println("3")
+			fmt.Println("3.")
 		case "4":
-			fmt.Println("4")
+			fmt.Println("4.")
 		case "5":
 			fmt.Println("Saliendo ...")
 		default:

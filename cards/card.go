@@ -17,8 +17,8 @@ type task struct {
 func (c cards) add() cards {
 
 	project := card{
-		description: "first project",
-		status:      "in progress",
+		description: StringPrompt("Ingrese el nombre del proyecto"),
+		status:      StringPrompt("Ingrese el estado del proyecto"),
 		tasks: []task{
 			{"task 1", "in progress"},
 			{"task 2", "done"},
